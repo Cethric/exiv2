@@ -69,7 +69,7 @@ if (EXIV2_BUILD_DOC)
 endif()
 
 
-include_directories(${CMAKE_BINARY_DIR})  # Make the exv_conf.h file visible for the full project
+include_directories(${CMAKE_CURRENT_BINARY_DIR})  # Make the exv_conf.h file visible for the full project
 
 if( EXIV2_ENABLE_XMP )
     add_subdirectory( xmpsdk )
@@ -113,7 +113,7 @@ if (EXIV2_TEAM_PACKAGING)
 endif()
 
 #configure_file(cmake/exiv2.pc.in exiv2.pc @ONLY)
-#install(FILES ${CMAKE_BINARY_DIR}/exiv2.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
+#install(FILES ${CMAKE_CURRENT_BINARY_DIR}/exiv2.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 #
 ## ******************************************************************************
 ## Man page
