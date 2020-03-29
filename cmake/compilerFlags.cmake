@@ -129,7 +129,7 @@ if(MSVC)
     endforeach()
 
     if ( EXIV2_EXTRA_WARNINGS )
-        string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+#        string(REGEX REPLACE "/W[0-4]" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
     endif ()
 
     # Object Level Parallelism

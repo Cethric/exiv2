@@ -219,22 +219,22 @@ if( EXV_NEED_BOOST_REGEX )
     target_include_directories(exiv2lib PUBLIC ${Boost_INCLUDE_DIRS})
 endif()
 
-write_basic_package_version_file(exiv2ConfigVersion.cmake COMPATIBILITY ExactVersion)
-
-install(TARGETS exiv2lib EXPORT exiv2Config
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-)
-
-install(FILES
-    ${CMAKE_BINARY_DIR}/exv_conf.h
-    ${CMAKE_BINARY_DIR}/exiv2lib_export.h
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/exiv2)
-
-install(EXPORT exiv2Config DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/exiv2")
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/exiv2ConfigVersion.cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/exiv2")
+#write_basic_package_version_file(exiv2ConfigVersion.cmake COMPATIBILITY ExactVersion)
+#
+#install(TARGETS exiv2lib EXPORT exiv2Config
+#    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#)
+#
+#install(FILES
+#    ${CMAKE_BINARY_DIR}/exv_conf.h
+#    ${CMAKE_BINARY_DIR}/exiv2lib_export.h
+#    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/exiv2)
+#
+#install(EXPORT exiv2Config DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/exiv2")
+#
+#install(FILES ${CMAKE_CURRENT_BINARY_DIR}/exiv2ConfigVersion.cmake DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/exiv2")
 
 # ******************************************************************************
 # exiv2 application
@@ -274,13 +274,13 @@ if(EXIV2_BUILD_EXIV2_COMMAND)
             COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_BINARY_DIR}/conanDlls ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
         # Copy 3rd party DLLs the bin folder. [install step]
-        install(DIRECTORY ${PROJECT_BINARY_DIR}/conanDlls/ DESTINATION bin)
+#        install(DIRECTORY ${PROJECT_BINARY_DIR}/conanDlls/ DESTINATION bin)
     endif()
 
-    install(TARGETS exiv2 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+#    install(TARGETS exiv2 RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-    if (MSVC)
-        set_target_properties(exiv2 PROPERTIES LINK_FLAGS "/ignore:4099")
-    endif()
+#    if (MSVC)
+#        set_target_properties(exiv2 PROPERTIES LINK_FLAGS "/ignore:4099")
+#    endif()
 endif()
 
