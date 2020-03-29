@@ -39,6 +39,7 @@
 
 #if defined(__MINGW__) || ((defined(WIN32) || defined(_WIN32) || defined(_WIN64)) && !defined(__CYGWIN))
 // Windows doesn't provide nlink_t
+#define NOMINMAX
 typedef short nlink_t;
 #include <io.h>
 #include <windows.h>

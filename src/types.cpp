@@ -34,6 +34,7 @@
 
 // + standard includes
 #if defined(_MSC_VER) || defined(__CYGWIN__) || defined(__MINGW__)
+#define NOMINMAX
 # include <windows.h> // for MultiByteToWideChar etc
 #endif // Windows
 #include <string>

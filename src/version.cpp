@@ -42,7 +42,7 @@
 #include <stdio.h>
 #include <iostream>
 
-#if ! defined(WIN32) && ! defined(__CYGWIN__) && ! defined(__MINGW__)
+#if ! (defined(WIN32) || defined(_WIN32)) && ! defined(__CYGWIN__) && ! defined(__MINGW__)
 #include <unistd.h>
 #include <sys/types.h>
 #endif
@@ -332,7 +332,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os,const exv_grep_keys_t& keys)
 
     output(os,keys,"config_path"       ,Exiv2::Internal::getExiv2ConfigPath());
 
-#if ! defined(WIN32) && ! defined(__CYGWIN__) && ! defined(__MINGW__)
+#if ! (defined(WIN32) || defined(_WIN32)) && ! defined(__CYGWIN__) && ! defined(__MINGW__)
     uid_t uid  = getuid();
     uid_t euid = geteuid();
     uid_t gid  = getgid();
